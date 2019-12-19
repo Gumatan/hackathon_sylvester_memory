@@ -1,0 +1,20 @@
+.game {
+  width: 80vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  h1 {
+    font-family: "Reindeer";
+  }
+
+  #boardgame {
+    width: 58%;
+    height: fit-content;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: blue;
+    justify-content: center;
+    border-radius: 6px;
+  }
+}

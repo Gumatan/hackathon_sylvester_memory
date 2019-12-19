@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Game from "./Game";
 import Recipe from "./Recipe";
 import Navbar from "./Navbar";
+import "./Main.scss";
 
 function Main() {
   return (
