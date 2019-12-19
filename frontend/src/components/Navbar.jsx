@@ -1,11 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.scss";
 
-function Navbar() {
+function Navbar(props) {
   return (
     <div className="navbar">
-      <Link to="/main">Game</Link>
+      <NavLink activeClassName="active" exact to="/main">
+        Game
+      </NavLink>
+      {props.bdd.map(e => {
+        return (
+          <NavLink activeClassName="active" to={`/main/recipe/${e.id}`}>
+            {e.name}
+          </NavLink>
+        );
+      })}
     </div>
   );
 }
