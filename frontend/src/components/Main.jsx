@@ -4,13 +4,18 @@ import Game from "./Game";
 import Recipe from "./Recipe";
 import Navbar from "./Navbar";
 import "./Main.scss";
+import bdd from "./appelbdd";
 
 function Main() {
   return (
     <div className="main">
-      <Navbar />
+      <Navbar bdd={bdd} />
       <Switch>
-        <Route path="/main/recipe" component={Recipe} />
+        <Route
+          path="/main/recipe/:id"
+          component={props => <Recipe {...props} bdd={bdd} />}
+        />
+
         <Route path="/main" component={Game} />
       </Switch>
     </div>
