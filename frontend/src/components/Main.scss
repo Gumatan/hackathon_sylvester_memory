@@ -4,5 +4,8 @@
   background-color: lavender;
   display: flex;
   flex-flow: nowrap;
-  font-family: "Reindeer", serif;
+  font-family: "Snowballs", serif;
+  div {
+    overflow: hidden;
+  }
 }

@@ -1,0 +1,25 @@
+.traineau {
+  width: 16%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  animation: trailIn 10s linear infinite;
+  animation-duration: 12s;
+}
+
+@keyframes trailIn {
+  from {
+    right: 0px;
+    bottom: 0px;
+  }
+
+  /* 50% {
+    right: 540px;
+    bottom: 360px;
+  } */
+
+  to {
+    right: 1880px;
+    bottom: 820px;
+  }
+}
