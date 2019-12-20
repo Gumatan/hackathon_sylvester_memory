@@ -6,15 +6,15 @@ import LandingPage from "./components/LandingPage";
 import Main from "./components/Main";
 
 function App() {
-  return (
-    <div className="App">
+  return <div className="App">
       <Snow />
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route path="/main" component={Main} />
+
       </Switch>
     </div>
-  );
 }
 
 export default App;
+
