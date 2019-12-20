@@ -10,7 +10,13 @@ import bdd from "./appelbdd";
 function Main() {
   return (
     <div className="main">
+      {console.log("renderMain")}
       <Navbar bdd={bdd} />
+      <div id="lightBorder">
+        <img id="guir1" src="guirlande.gif" alt="" />
+        <img id="guir2" src="guirlande.gif" alt="" />
+        <img id="guir3" src="guirlande.gif" alt="" />
+      </div>
       <Switch>
         <Route
           path="/main/recipe/:id"
@@ -25,7 +31,7 @@ function Main() {
           src="/traineau.gif"
           alt=""
           onClick={() => {
-            alert("Cela ne fait rien de special");
+            alert("Cela ne fait rien de spécial");
           }}
         />
       </div>

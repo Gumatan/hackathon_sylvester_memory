@@ -5,6 +5,7 @@ import "./Navbar.scss";
 function Navbar(props) {
   return (
     <div className="navbar">
+      {console.log("renderNavBar")}
       <NavLink activeClassName="active" exact to="/main">
         Game
       </NavLink>

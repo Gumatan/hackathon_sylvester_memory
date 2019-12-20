@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "./Game.scss";
 import Card from "./Card";
 
@@ -13,86 +14,44 @@ const shuffleArr = array => {
 };
 ingredients = shuffleArr(ingredients);
 
-class Game extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentCard: {
-        value: null,
-        id: null
-      },
-      firstCard: { value: null, id: null },
-      secondCard: {
-        value: null,
-        id: null
-      },
-      isMatched: false
-    };
-  }
+const Game = () => {
+  const firstCard = useSelector(state => state.firstCard);
+  const secondCard = useSelector(state => state.secondCard);
+  const dispatch = useDispatch();
 
-  updateCurrentCard = (value, id) => {
-    if (this.state.currentCard.id !== id) {
-      this.setState({ currentCard: { value, id } });
-    }
-  };
-
-  isMatched = () => {
-    if (this.state.firstCard.value === this.state.secondCard.value) {
+  const isMatched = () => {
+    if (firstCard.value === secondCard.value && secondCard.value !== null) {
       console.log("ok");
-      this.setState({
-        isMatched: true
-      });
-    } else {
-      this.setState({
-        firstCard: { value: null, id: null },
-        secondCard: { value: null, id: null }
-      });
-      console.log("you lose loser");
+      dispatch({ type: "PAIR_RESET" });
+    } else if (secondCard.value !== null) {
+      setTimeout(() => {
+        dispatch({ type: "RESET_CARDS", ids: [firstCard.id, secondCard.id] });
+        console.log("you lose loser");
+      }, 1000);
     }
   };
 
-  async componentDidUpdate() {
-    if (this.state.firstCard.value === null && this.state.currentCard.value) {
-      this.setState({
-        firstCard: this.state.currentCard,
-        currentCard: { value: null, id: null }
-      });
-      console.log(this.state.currentCard);
-    } else if (
-      this.state.secondCard.value === null &&
-      this.state.currentCard.value
-    ) {
-      await this.setState({
-        secondCard: this.state.currentCard,
-        currentCard: { value: null, id: null }
-      });
-
-      console.log(this.state.secondCard);
-      this.isMatched();
+  useEffect(() => {
+    console.log("useEffetGame");
+    if (secondCard !== null && firstCard !== null) {
+      isMatched();
     }
-  }
+  }, [secondCard]);
 
-  render() {
-    return (
-      <div className="game">
-        <h1>
-          {"(Sylvester"} <span>{"Memory)"}</span>{" "}
-        </h1>
-        <div id="boardgame">
-          {ingredients.map((item, i) => {
-            return (
-              <Card
-                key={i}
-                item={item}
-                id={i}
-                updateCurrentCard={this.updateCurrentCard}
-              />
-            );
-          })}
-        </div>
+  return (
+    <div className="game">
+      {console.log("renderGame")}
+      <h1>
+        {"(Sylvester's "}
+        <span>{"Memory)"}</span>
+      </h1>
+      <div id="boardgame">
+        {ingredients.map((item, i) => {
+          return <Card key={i} item={item} id={i} />;
+        })}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Game;

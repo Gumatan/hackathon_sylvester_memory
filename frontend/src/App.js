@@ -8,6 +8,7 @@ import Main from "./components/Main";
 function App() {
   return (
     <div className="App">
+      {console.log("RenderApp")}
       <Snow />
       <Switch>
         <Route exact path="/" component={LandingPage} />
