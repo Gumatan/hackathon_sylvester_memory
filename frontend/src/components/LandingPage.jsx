@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import "./LandingPage.scss";
 
 function LandingPage() {
@@ -8,11 +9,11 @@ function LandingPage() {
 
       Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam. Integer quis metus vitae elit lobortis egestas. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi vel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus, convallis id, congue eu, quam.</p>
 
-      <button onClick="enterGame()">
-      Enter the game
-      </button>
+      <Link className="button" to="/main"> Enter the Game !</Link>
   </div>
 }
 
 export default LandingPage;
+
+
 

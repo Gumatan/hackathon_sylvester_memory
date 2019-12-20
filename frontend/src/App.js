@@ -10,8 +10,10 @@ function App() {
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route path="/main" component={Main} />
+
       </Switch>
     </div>
 }
 
 export default App;
+

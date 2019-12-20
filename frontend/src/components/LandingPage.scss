@@ -1,14 +1,16 @@
 .landingPage{
+  height: 100vh;
   background: no-repeat center url("/noel.png");
   background-size: cover;
+  font-family: "Reindeer";
   h1 {
-    font-family: "Reindeer";
+
     color: red;
     text-align: center;
     font-size: 12rem;
   }
   p{
-    font-family: "Reindeer";
+
     font-size: 2.8rem;
     color: gold;
     text-align: justify;
@@ -20,15 +22,12 @@
     padding: 15px;
     align-items: center;
   }
-  button {
-    font-family: "Reindeer";
+  .button {
+    margin: 37.5vw;
+    text-align: center;
     color: white;
     font-size: 6rem;
     background: green;
-    display: block;
-    position: relatiqve;
-    margin-left: auto;
-    margin-right: auto;
     padding: 10px 30px;
     cursor: pointer;
     opacity: 0.8;
