@@ -1,0 +1,21 @@
+.recipe {
+  width: 80vw;
+  font-size: 2em;
+  text-align: center;
+  text-decoration: none;
+
+  h1 {
+    font-size: larger;
+    color: red;
+    margin: 7vh;
+  }
+
+  li {
+    margin-top: 5vh;
+    list-style: square;
+  }
+
+  p {
+    margin-top: 10vh;
+  }
+}

@@ -1,0 +1,11 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: lavender;
+  display: flex;
+  flex-flow: nowrap;
+  font-family: "Snowballs", serif;
+  div {
+    overflow: hidden;
+  }
+}

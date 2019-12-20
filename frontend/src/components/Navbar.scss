@@ -1,0 +1,22 @@
+.navbar {
+  display: block;
+  width: 20vw;
+  height: 100vh;
+  background-color: maroon;
+  a {
+    display: block;
+    font-size: 1.8em;
+    margin: 5vh;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+  }
+
+  a.active {
+    font-size: 1.8em;
+    margin: 5vh;
+    text-align: center;
+    text-decoration: none;
+    color: green;
+  }
+}

@@ -1,0 +1,43 @@
+.landingPage{
+  height: 100vh;
+  background: no-repeat center url("/wallpaper.jpg");
+  background-size: cover;
+  font-family: "Reindeer";
+  h1 {
+    color: #92251f;
+    text-align: center;
+    font-size: 12rem;
+    text-shadow: 3px 3px 7px white;
+    span {
+      color: #183f25;
+    }
+  }
+  p{
+    font-size: 3.8rem;
+    color: grey;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    border: solid;
+    border-radius: 15px;
+    margin: 97.5px 85px ;
+    padding: 15px;
+    align-items: center;
+    background-color: #ffffff;
+    opacity: 0.8;
+    text-shadow: 1px 1px 1px #e8e8df;
+  }
+  .button {
+    margin: 37.5vw;
+    text-align: center;
+    color: white;
+    font-size: 6rem;
+    background: green;
+    padding: 10px 30px;
+    cursor: pointer;
+    opacity: 0.8;
+    border-radius: 15px;
+    position: relative;
+    bottom: 50px;
+  }
+}

@@ -1,0 +1,25 @@
+.card {
+  width: 12vh;
+  height: 18vh;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(153, 124, 116, 1) 0%,
+    rgba(97, 51, 44, 1) 80%,
+    rgba(97, 51, 44, 1) 100%
+  );
+  border-radius: 6px;
+  box-shadow: 0px 0px 0px 8px #592d28 inset;
+  margin: 0.9em 1.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s;
+  &.flip {
+    transform: rotateY(180deg);
+  }
+  img {
+    width: 100%;
+  }
+  p {
+  }
+}
