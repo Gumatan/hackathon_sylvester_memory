@@ -39,7 +39,7 @@ const Card = ({ item, id }) => {
       onClick={!secondCardId && handleClick}
     >
       {console.log("RenderCard")}
-      {hide ? <img src="/doscarte.png" /> : <p>{item}</p>}
+      {hide ? <img src="/doscarte.png" /> : <img src={item} className="food" />}
     </div>
   );
 };

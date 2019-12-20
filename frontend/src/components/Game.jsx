@@ -3,7 +3,18 @@ import { useSelector, useDispatch } from "react-redux";
 import "./Game.scss";
 import Card from "./Card";
 
-let ingredients = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+let ingredients = [
+  "/thank_2.svg",
+  "/onion.svg",
+  "/pain.svg",
+  "/cheese.svg",
+  "/egg.svg",
+  "/sss.svg",
+  "/steak.svg",
+  "/bacon.svg",
+  "/mushroom.svg",
+  "/nodanero_Cheese.svg"
+];
 ingredients = ingredients.concat(ingredients);
 const shuffleArr = array => {
   for (let i = array.length - 1; i > 0; i--) {
