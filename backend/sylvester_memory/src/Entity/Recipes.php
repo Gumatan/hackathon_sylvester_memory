@@ -24,19 +24,24 @@ class Recipes
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\User", mappedBy="recipe")
-     */
-    private $users;
-
-    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Ingredients", inversedBy="recipes")
      */
     private $ingredients;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\TrueUser", mappedBy="recipes")
+     */
+    private $trueUsers;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $pictures;
+
     public function __construct()
     {
-        $this->users = new ArrayCollection();
         $this->ingredients = new ArrayCollection();
+        $this->trueUsers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -56,33 +61,6 @@ class Recipes
         return $this;
     }
 
-    /**
-     * @return Collection|User[]
-     */
-    public function getUsers(): Collection
-    {
-        return $this->users;
-    }
-
-    public function addUser(User $user): self
-    {
-        if (!$this->users->contains($user)) {
-            $this->users[] = $user;
-            $user->addRecipe($this);
-        }
-
-        return $this;
-    }
-
-    public function removeUser(User $user): self
-    {
-        if ($this->users->contains($user)) {
-            $this->users->removeElement($user);
-            $user->removeRecipe($this);
-        }
-
-        return $this;
-    }
 
     /**
      * @return Collection|Ingredients[]
@@ -109,4 +87,45 @@ class Recipes
 
         return $this;
     }
+
+    /**
+     * @return Collection|TrueUser[]
+     */
+    public function getTrueUsers(): Collection
+    {
+        return $this->trueUsers;
+    }
+
+    public function addTrueUser(TrueUser $trueUser): self
+    {
+        if (!$this->trueUsers->contains($trueUser)) {
+            $this->trueUsers[] = $trueUser;
+            $trueUser->addRecipe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTrueUser(TrueUser $trueUser): self
+    {
+        if ($this->trueUsers->contains($trueUser)) {
+            $this->trueUsers->removeElement($trueUser);
+            $trueUser->removeRecipe($this);
+        }
+
+        return $this;
+    }
+
+    public function getPictures(): ?string
+    {
+        return $this->pictures;
+    }
+
+    public function setPictures(string $pictures): self
+    {
+        $this->pictures = $pictures;
+
+        return $this;
+    }
+
 }
