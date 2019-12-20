@@ -1,4 +1,10 @@
 @font-face {
   font-family: "Reindeer";
-  src: url("/Reindeer-Christmas.otf");
+  font-style: normal;
+  font-weight: normal;
+  src: url("/font/Reindeer Christmas - Personal Use.otf") format("opentype");
+}
+
+body {
+  cursor: url("/reindeer_cursor (4).png"), auto !important;
 }

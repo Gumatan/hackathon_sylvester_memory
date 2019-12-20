@@ -17,41 +17,76 @@ class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentCard: null,
-      firstCard: null,
-      secondCard: null,
+      currentCard: {
+        value: null,
+        id: null
+      },
+      firstCard: { value: null, id: null },
+      secondCard: {
+        value: null,
+        id: null
+      },
       isMatched: false
     };
   }
 
-  updateCurrentCard = item => {
-    this.setState({ currentCard: item });
-  };
-
-  isMatched = () => {
-    if (this.state.firstCard === this.state.currentCard) {
+  updateCurrentCard = (value, id) => {
+    if (this.state.currentCard.id !== id) {
+      this.setState({ currentCard: { value, id } });
     }
   };
 
-  componentDidUpdate() {
-    if (this.state.firstCard === null && this.state.currentCard) {
-      this.setState({ firstCard: this.state.currentCard, currentCard: null });
+  isMatched = () => {
+    if (this.state.firstCard.value === this.state.secondCard.value) {
+      console.log("ok");
+      this.setState({
+        isMatched: true
+      });
+    } else {
+      this.setState({
+        firstCard: { value: null, id: null },
+        secondCard: { value: null, id: null }
+      });
+      console.log("you lose loser");
+    }
+  };
+
+  async componentDidUpdate() {
+    if (this.state.firstCard.value === null && this.state.currentCard.value) {
+      this.setState({
+        firstCard: this.state.currentCard,
+        currentCard: { value: null, id: null }
+      });
       console.log(this.state.currentCard);
-    } else if (this.state.secondCard === null && this.state.currentCard) {
+    } else if (
+      this.state.secondCard.value === null &&
+      this.state.currentCard.value
+    ) {
+      await this.setState({
+        secondCard: this.state.currentCard,
+        currentCard: { value: null, id: null }
+      });
+
+      console.log(this.state.secondCard);
       this.isMatched();
-      this.setState({ secondCard: this.state.currentCard, currentCard: null });
-      console.log(this.state.currentCard);
     }
   }
 
   render() {
     return (
       <div className="game">
-        <h1>Sylvester Memory</h1>
+        <h1>
+          {"(Sylvester"} <span>{"Memory)"}</span>{" "}
+        </h1>
         <div id="boardgame">
           {ingredients.map((item, i) => {
             return (
-              <Card item={item} updateCurrentCard={this.updateCurrentCard} />
+              <Card
+                key={i}
+                item={item}
+                id={i}
+                updateCurrentCard={this.updateCurrentCard}
+              />
             );
           })}
         </div>
