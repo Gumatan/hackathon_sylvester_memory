@@ -1,21 +1,28 @@
 .recipe {
   width: 80vw;
-  font-size: 2em;
   text-align: center;
   text-decoration: none;
 
   h1 {
-    font-size: larger;
+    font-size: 2em;
     color: red;
     margin: 7vh;
   }
 
   li {
-    margin-top: 5vh;
+    margin-left: 30vw;
+    text-align: justify;
     list-style: square;
   }
-
-  p {
-    margin-top: 10vh;
+  .ulprepa {
+    margin: 5vh;
+  }
+  .prepa {
+    margin-left: 0;
+    list-style: none;
+    text-align: justify;
+    font-size: 1em;
+    margin-top: 10px;
+    width: 70vw;
   }
 }

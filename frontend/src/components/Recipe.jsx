@@ -14,7 +14,11 @@ function Recipe(props) {
           <li>{e}</li>
         ))}
       </ul>{" "}
-      <p>{bdd.preparation}</p>
+      <ul className="ulprepa">
+        {bdd.preparation.map(e => (
+          <li className="prepa">{e}</li>
+        ))}
+      </ul>{" "}
     </div>
   );
 }
