@@ -1,8 +1,23 @@
 .main {
   width: 100vw;
-  height: 100vh;
+  max-height: 100vh;
   background-color: lavender;
   display: flex;
   flex-flow: nowrap;
-  font-family: "Reindeer", serif;
+  font-family: "Snowballs", serif;
+
+  #lightBorder {
+    img {
+      position: absolute;
+      width: 55%;
+      transform: rotate(90deg);
+      left: calc(20vw - 525px);
+      &#guir2 {
+        top: 563px;
+      }
+      &#guir3 {
+        top: 1064px;
+      }
+    }
+  }
 }

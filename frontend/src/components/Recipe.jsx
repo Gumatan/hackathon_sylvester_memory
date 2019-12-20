@@ -1,6 +1,5 @@
 import React from "react";
 import "./Recipe.scss";
-import { useParams } from "react-router-dom";
 
 function Recipe(props) {
   console.log(props);
@@ -8,6 +7,7 @@ function Recipe(props) {
   const bdd = props.bdd[parseInt(id)];
   return (
     <div className="recipe">
+      {console.log("renderRecipe")}
       <h1>{bdd.name}</h1>
       <ul>
         {bdd.ingredients.map(e => (
